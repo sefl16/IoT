@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   result: any;
   arr = [];
   sensors = {};
+  draw: any;
 
   constructor(
     private data: DataService,
@@ -46,23 +47,35 @@ export class HomeComponent implements OnInit {
 
       console.log(this.arr)
       console.log(this.sensors)
-    });
 
-    for(let sensor of this.sensors) {
-      this.barChartLabels.push(sensor[0][0])
-      this.barChartData[0].data.push(sensor[1])
-    }
+      var number = 0;
+      for(let sensor in this.sensors) {
+
+        console.log(sensor);
+        if (sensor == "vdd") {
+          continue;
+        }
+        // this.barChartLabels.push(sensor)
+        this.barChartData.push({data: [], label: sensor})
+        for (let data in this.sensors[sensor]) {
+          this.barChartData[number].data.push(this.sensors[sensor][data][1])
+          // console.log(data)
+        }
+        number++;
+        // this.barChartData[0].data.push(sensor)
+      }
+      console.log(this.barChartData);
+      this.draw = this.sensors
+    });
   }
   public barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  public barChartLabels = [];
-  public barChartType = 'line';
+  public barChartLabels = ["Data from Op5"];
+  public barChartType = 'bar';
   public barChartLegend = true;
-  public barChartData = [
-    {data: [], label: 'Series A'},
-  ];
+  public barChartData = [];
 
   firstClick() {
     this.h1Style = true;

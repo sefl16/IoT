@@ -35,7 +35,7 @@ if(isset($postdata) && !empty($postdata))
       'password' => $password,
       'id'    => mysqli_insert_id($con)
     ];
-    echo json_encode($users);
+    echo json_encode($user);
   }
   else
   {

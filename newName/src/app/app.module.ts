@@ -16,6 +16,15 @@ import { NavComponent } from './nav/nav.component';
 import { ChartsModule } from 'ng2-charts';
 import { ApartmentComponent } from './apartment/apartment.component';
 
+//Julia
+import { SensorComponent } from './components/sensor/sensor.component';
+import { DeviceComponent } from './components/device/device.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { LoginComponent } from './components/login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
+
+//Christian
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +32,13 @@ import { ApartmentComponent } from './apartment/apartment.component';
     AboutComponent,
     HomeComponent,
     NavComponent,
-    ApartmentComponent
+    ApartmentComponent,
+    AdminComponent,
+    LoginComponent,
+    CustomerComponent,
+    DeviceComponent,
+    SensorComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

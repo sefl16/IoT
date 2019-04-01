@@ -1,11 +1,11 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE");
-header("Access-Control-Allo-Headers: Origin, X-Requsted-With, Content-Type, Accept");
+header("Access-Control-Allow-Headers: Origin, X-Requsted-With, Content-Type, Accept");
 define('DB_HOST', 'localhost');
-define('DB_USER' 'root');
-define('DB_pass', 'testpass');
-define('DB_NAME', 'grupptest');
+define('DB_USER', 'root');
+define('DB_PASS', 'pass');
+define('DB_NAME', 'studentverken');
 
 function connect()
 {

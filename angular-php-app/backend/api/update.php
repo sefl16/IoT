@@ -20,7 +20,7 @@ if(isset($postdata) && !empty($postdata))
   $password = mysqli_real_escape_string($con, (string)$request->password);
   $first_name = mysqli_real_escape_string($con, (string)$request->first_name);
   $last_name = mysqli_real_escape_string($con, (string)$request->last_name);
-  $op5_key = mysqli_real_escape_string($con, (string)$request->op5_key);
+  $op5_key = isset($request->op5_key) ? mysqli_real_escape_string($con, (string)$request->op5_key) : null;
 
   // Update.
   $sql = "UPDATE `users` SET `username`='$username',`password`='$password', `first_name`='$first_name', `last_name`='$last_name', `op5_key`='$op5_key' WHERE `id` = '{$id}' LIMIT 1";
